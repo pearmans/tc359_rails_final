@@ -2,8 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.nav {
+html {
+  color: #555;
+}
+
+header {
+  background: #38b;
+  color: #fff;
+}
+
+nav .nav {
+  border-bottom: 1px solid #ccc;
+  overflow: auto;
   li {
     display: inline-block;
+    a {
+      color: #fff;
+    }
   }
+}
+
+.sort-select {
+  padding: 10px;
+  a {
+    padding-right: 10px;
+  }
+}
+
+.posts {
+  h2.post-title {
+
+  }
+}
+
+.froala-view {
+  h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.home-post {
+  margin-bottom: 30px;
 }

@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+
+    title CarHackResource
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    header
+      nav
+        ul.nav
+          li= link_to root_path do
+            h1 SkillSoup
+          end
+          li= link_to "About", site_about_path
+          li= link_to "posts", posts_path

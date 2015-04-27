@@ -1,7 +1,8 @@
-h1 Site#home
-p Find me in app/views/site/home.html.erb
-
-- @posts.each do |post|
-  h2 = post.title
-  p = post.body.to_s.truncate(140)
-  = image_tag post.image_url.to_s
+.sort-select
+  = sortable "title"
+  = sortable "created_at", "Date Created"
+section.posts
+  - @posts.each do |post|
+    .home-post
+      h2.post-title = post.title
+      blockquote.froala-view = post.body.truncate(140).html_safe

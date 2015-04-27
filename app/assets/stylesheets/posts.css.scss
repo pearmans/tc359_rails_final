@@ -1,3 +1,27 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.froala-box {
+  .froala-element {
+    min-height: 300px;
+  }
+}
+
+.field {
+  margin: 0;
+  label {
+    display: none;
+  }
+  .title {
+    width: 100%;
+    padding: 14px 20px 12px 20px;
+    margin-bottom: 6px;
+    font-size: 2em;
+    line-height: 1.2em;
+    border: 1px solid #333;
+    &:focus {
+      outline: none;
+    }
+  }
+}
