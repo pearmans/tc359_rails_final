@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   resources :posts
 
-  root 'site#home'
+  root 'posts#index'
 
   get 'site/about'
 

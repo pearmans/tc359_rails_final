@@ -1,8 +1,0 @@
-.sort-select
-  = sortable "title"
-  = sortable "created_at", "Date Created"
-section.posts
-  - @posts.each do |post|
-    .home-post
-      h2.post-title = post.title
-      blockquote.froala-view = post.body.truncate(140).html_safe

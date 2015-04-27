@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.order(params[:sort])
+    @posts = Post.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 4, page: params[:page])
   end
 
   # GET /posts/1
@@ -72,4 +72,14 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :body, :category1, :category2, :image)
     end
+
+    def sort_column
+      Post.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
+    end
+    helper_method :sort_column
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
+    helper_method :sort_direction
 end
