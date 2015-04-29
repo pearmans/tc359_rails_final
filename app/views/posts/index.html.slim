@@ -1,9 +1,19 @@
-= form_tag posts_path, method: 'get', remote: true do
-  = text_field_tag :search, params[:search]
-  = hidden_field_tag :direction, params[:direction]
-  = hidden_field_tag :sort, params[:sort]
-  = submit_tag "Search"
+
+
+.toolbar
+  .sort-select
+    span Sort by:
+    = sortable "title"
+    = sortable "created_at", "Date"
+  = form_tag posts_path, method: 'get', remote: true
+    = text_field_tag :search, params[:search], autocomplete: "off"
+    = hidden_field_tag :direction, params[:direction]
+    = hidden_field_tag :sort, params[:sort]
+    = button_tag class: 'btn btn-lg search'
+      i.fa.fa-search
+  = button_to new_post_path, method: :get, class: 'btn btn-lg'
+    i.fa.fa-pencil-square-o
+    |  New Post
+
 section.posts
   = render "postfeed"
-
-= link_to 'New Post', new_post_path

@@ -3,7 +3,19 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .froala-box {
+  .froala-editor.f-basic {
+    border: none;
+    padding: 5px 15px;
+  }
+  .froala-wrapper.f-basic {
+    border: 0;
+    border-top: 1px solid #ddd;
+    span.fr-placeholder {
+      margin: 15px 25px;
+    }
+  }
   .froala-element {
+    padding: 15px 25px;
     min-height: 300px;
   }
 }
@@ -16,10 +28,12 @@
   .title {
     width: 100%;
     padding: 14px 20px 12px 20px;
+    margin-top: 40px;
     margin-bottom: 6px;
     font-size: 2em;
     line-height: 1.2em;
-    border: 1px solid #333;
+    border-width: 0 0 1px 0;
+    border-color: #ddd;
     &:focus {
       outline: none;
     }

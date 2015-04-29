@@ -1,2 +1,16 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
+@import "_colors";
+
+.btn {
+  background: $brand-prim;
+  color: #fff;
+
+  &:hover {
+    color: $brand-prim-light;
+  }
+}
+
+input:focus, button:focus, textarea:focus {
+
+  outline: 0;
+
+}

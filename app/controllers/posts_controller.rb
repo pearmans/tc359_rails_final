@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    render layout: 'static'
   end
 
   # GET /posts/1/edit

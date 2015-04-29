@@ -8,11 +8,18 @@ html
     = csrf_meta_tags
 
   body
+    - flash.each do |type, message|
+      div class=["flash" , type]
+        p = message
+        div.dismiss X
+
     header
       nav
-        ul.nav
-          li= link_to root_path do
+        ul.nav.container
+          li= link_to root_path
             h1 SkillSoup
-          end
-          li= link_to "About", site_about_path
-          li= link_to "posts", posts_path
+          - if user_signed_in?
+            li.pull-right = link_to "Sign Out", sign_out_path, method: :delete
+          - else
+            li.pull-right = link_to "Sign In", sign_in_path
+            li.pull-right = link_to "Create Account", new_user_path

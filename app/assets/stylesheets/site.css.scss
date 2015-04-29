@@ -2,21 +2,64 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "base";
+
 html {
   color: #555;
 }
 
+body {
+  
+}
+
+div.flash {
+  background: #eee;
+  margin:0;
+  position: relative;
+  line-height: 10px;
+  padding: 15px;
+  border: 0;
+  p {
+    margin: 0;
+  }
+  .dismiss {
+    position: absolute;
+    right: 0px;
+    padding: 15px 20px;
+    top: 0;
+    background: #ddd;
+    cursor: pointer;
+    &:hover {
+      background: #ccc;
+    }
+  }
+}
+
 header {
-  background: #38b;
+  background: $brand-prim;
   color: #fff;
 }
 
-nav .nav {
+nav ul.nav {
   overflow: auto;
+  padding-top: 0;
   li {
     display: inline-block;
+
+    &.pull-right {
+      top: 38px;
+      a {
+        height: 57px;
+      }
+    }
+
     a {
       color: #fff;
+      border-bottom: 6px solid transparent;
+      &:hover {
+        background: none;
+        border-bottom: 6px solid #fff;
+      }
     }
   }
 }
@@ -25,17 +68,45 @@ nav .nav {
   padding-top: 20px;
 }
 
+div.toolbar {
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  .btn {
+    display: inline-block;
+    &.search {
+      border-radius: 3px 10px 10px 3px;
+      margin-right: 40px;
+    } 
+  }
+  form {
+    display: inline-block;
+    #search {
+      position: relative;
+      margin-right: 3px;
+      border-radius: 10px 3px 3px 10px;
+      border: 2px solid #ddd;
+      font-size: 18px;
+      padding: 9px 14px 8px 14px;
+      top: 3px;
+    }
+  }
+}
+
 .sort-select {
   padding: 10px;
+  display: inline-block;
+  margin-right: 40px;
   a {
     padding-right: 10px;
+  }
+  span {
+    margin-right: 15px;
   }
 }
 
 .posts {
-  h2.post-title {
-
-  }
   h3.post-date {
     margin: 0 0 10px 0;
     font-size: 20px;
@@ -52,7 +123,7 @@ nav .nav {
 .home-post {
   background: #fff;
   margin-bottom: 30px;
-  border: 3px solid #d6e6f6;
+  // border: 3px solid #d6e6f6;
   padding: 20px;
   border-radius: 10px;
   &:hover {

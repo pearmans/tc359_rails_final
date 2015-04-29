@@ -15,9 +15,15 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){
+$(function() {
   $('#search').on('keyup', function () {
     console.log('test');
     $(this).parent('form').submit();
   });
+});
+
+$(function () {
+  $('div.dismiss').on('click', function(){
+    $(this).parent().hide(400)
+  })
 });
