@@ -19,8 +19,9 @@ gem 'carrierwave'
 gem 'wysiwyg-rails'
 gem 'stamp'
 gem 'pg'
-gem 'will_paginate' 
+gem 'will_paginate'
 gem 'bcrypt'
+gem 'font-awesome-rails'
 # gem 'rmagick'
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # gem 'unicorn' # Use unicorn as the app server
@@ -28,7 +29,7 @@ gem 'bcrypt'
 # gem 'debugger', group: [:development, :test] # Use debugger
 group :development do
   gem 'spring'
-  gem "better_errors"
-  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
