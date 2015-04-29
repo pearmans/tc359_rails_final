@@ -2,29 +2,29 @@ javascript:
   $(function() {
     $('#edit').editable({
       inlineMode: false,
-      buttons: ['bold','italic','underline','formatBlock','sep','insertUnorderedList','blockstyle','indent','outdent','sep','createLink','undo','redo']
+      buttons: ['bold','italic','underline','formatBlock','sep','insertUnorderedList','blockstyle','indent','outdent','sep','createLink','undo','redo','insertImage']
     })
   });
 
-= form_for @post, :html => {:multipart => true} do |f| 
-  - if @post.errors.any? 
+= form_for @post, :html => {:multipart => true} do |f|
+  - if @post.errors.any?
     div#error_explanation
       h2 = pluralize(@post.errors.count, "error") + "prohibited this post from being saved"
 
       ul
-        - @post.errors.full_messages.each do |message| 
+        - @post.errors.full_messages.each do |message|
           li = message
 
   .field
-    = f.label :title 
-    = f.text_field :title, class: "title", placeholder: "Post Title..." 
-    = f.label :body 
-    = f.text_area :body, id: "edit" 
+    = f.label :title
+    = f.text_field :title, class: "title", placeholder: "Post Title..."
+    = f.label :body
+    = f.text_area :body, id: "edit"
   .field
-    = f.label :category1 
-    = f.text_field :category1 
+    = f.label :category1
+    = f.text_field :category1
   .field
-    = f.label :category2 
-    = f.text_field :category2 
+    = f.label :category2
+    = f.text_field :category2
   .actions
-    = f.submit 
+    = f.submit

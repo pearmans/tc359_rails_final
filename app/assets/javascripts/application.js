@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require froala_editor.min
+//= require plugins/media_manager.min
 //= require_tree .
 
 $(function() {
