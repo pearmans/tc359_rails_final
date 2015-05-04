@@ -1,11 +1,17 @@
 class PostsController < ApplicationController
   
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  helper_method :sort_direction, :sort_column
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.search(params[:search]).order(sort_column + " " + sort_direction).paginate(per_page: 4, page: params[:page])
+    @posts = Post.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page])
+    respond_to do |format|
+      format.html
+      format.json
+      format.js
+    end
   end
 
   # GET /posts/1
@@ -77,10 +83,8 @@ class PostsController < ApplicationController
     def sort_column
       Post.column_names.include?(params[:sort]) ? params[:sort] : "created_at"
     end
-    helper_method :sort_column
 
     def sort_direction
-      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+      ['asc','desc'].include?(params[:direction]) ? params[:direction] : "desc"
     end
-    helper_method :sort_direction
 end

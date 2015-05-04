@@ -18,8 +18,9 @@
 //= require_tree .
 
 $(function() {
+  var xmlhttp;
+
   $('#search').on('keyup', function () {
-    console.log('test');
     $(this).parent('form').submit();
   });
 });
