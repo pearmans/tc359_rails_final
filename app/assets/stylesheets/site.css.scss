@@ -163,5 +163,14 @@ blockquote {
   border-left: 5px solid #d6e6f6;
 }
 
+.prompt {
+  padding: 20px 15px;
+  border: $brand-border;
+  display: inline-block;
+  background: $brand-prim-light;
+  max-width: 200px;
+  text-align: center;
+}
+
 
 

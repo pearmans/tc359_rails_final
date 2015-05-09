@@ -1,19 +1,25 @@
-= form_for, :html => {class: 'form-default'} @user do |f|
-  - if @user.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
-      ul
-        - @user.errors.full_messages.each do |message|
-          li = message
+.form-default.col-sm-6
+  = form_for @user, :html => {class: 'rounded'} do |f|
+    h2 Create an account
+    - if @user.errors.any?
+      #error_explanation
+        h3 = "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+        ul
+          - @user.errors.full_messages.each do |message|
+            li = message
+    .field
+      = f.label :email
+      = f.text_field :email, placeholder: "Email address", required: true
+    .field
+      = f.label :password
+      = f.password_field :password, placeholder: "Password", required: true
+    .field
+      = password_field_tag 'user[password_confirmation]', nil, placeholder: 'Confirm Password', required: true
+    .field
+      = hidden_field_tag 'user[admin]', false
+    .actions = f.submit
 
-  .field
-    = f.label :email
-    = f.text_field :email, placeholder: "Email address", required: true
-  .field
-    = f.label :password
-    = f.password_field :password, placeholder: "Password", required: true
-  .field
-    = password_field_tag 'user[password_confirmation]', nil, placeholder: 'Confirm Password', required: true
-  .field
-    = hidden_field_tag 'user[admin]', false
-  .actions = f.submit
+.col-sm-6
+  div.prompt.rounded
+    h4 Already a member?
+    = link_to "Sign In", sign_in_path, class: 'btn'

@@ -25,6 +25,7 @@ html
             h1 SkillSoup
           - if user_signed_in?
             li.pull-right = link_to "Sign Out", sign_out_path, method: :delete
+            li.pull-right = link_to "Profile", user_path(current_user), method: :get
           - else
             li.pull-right = link_to "Sign In", sign_in_path
             li.pull-right = link_to "Create Account", new_user_path

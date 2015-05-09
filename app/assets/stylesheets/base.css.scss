@@ -1,19 +1,19 @@
 @import "_colors";
 
-.btn {
-  background: $brand-prim;
-  color: #fff;
-
-  &:hover {
-    color: $brand-prim-light;
-  }
-}
+$brand-border: 2px solid #ddd;
 
 input:focus, button:focus, textarea:focus {
   outline: 0;
 }
 
-form.form-default {
+.form-default {
+  display: inline-block;
+  margin-bottom: 20px;
+  form {
+    padding: 15px;
+    border: $brand-border;
+    background: #f6f6f6;
+  }
   input {
     padding: 8px;
     font-size: 1.1em;

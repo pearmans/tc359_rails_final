@@ -1,9 +1,19 @@
-= form_tag sessions_path
-  .field
-    = label_tag :email
-    = text_field_tag :email, nil, placeholder: "Email", required: true
-  .field
-    = label_tag :password
-    = password_field_tag :password, nil, placeholder: "Password", required: true
-  .actions
-    = submit_tag "Log In"
+
+
+
+.form-default.col-sm-6
+  = form_tag sessions_path
+    h2 Sign in
+    .field
+      = label_tag :email
+      = text_field_tag :email, nil, placeholder: "Email", required: true
+    .field
+      = label_tag :password
+      = password_field_tag :password, nil, placeholder: "Password", required: true
+    .actions
+      = submit_tag "Log In", class: 'btn'
+
+.col-sm-6
+  div.prompt
+    h4 Already a member?
+    = link_to "Sign In", sign_in_path, class: 'btn'
