@@ -31,6 +31,23 @@ div.flash {
   }
 }
 
+.admin-panel {
+  background: #333;
+  padding: 15px 20px 5px 20px;
+  overflow: auto;
+  color: #ddd;
+  span, ul, li {
+    display: inline-block;
+    float: left;
+  }
+  ul {
+    a {
+      color: #4ad;
+      font-weight: 600;
+    }
+  }
+}
+
 header {
   background: $brand-prim;
   color: #fff;

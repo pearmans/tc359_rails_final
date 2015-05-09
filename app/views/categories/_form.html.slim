@@ -1,0 +1,15 @@
+= form_for @category, :html => {class: 'form-default'} do |f|
+  - if @category.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+      ul
+        - @category.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title, placeholder: 'Category Name'
+  .field
+    = f.label :image
+    = f.text_field :image, placeholder: 'Category Image URL'
+  .actions = f.submit class: 'btn'

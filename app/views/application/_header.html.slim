@@ -12,7 +12,12 @@ html
       div class=["flash" , type]
         p = message
         div.dismiss X
-
+    - if user_signed_in? && current_user.admin
+        .admin-panel
+          span Admin Links
+          nav
+            ul
+              li = link_to "Categories Home", categories_path
     header
       nav
         ul.nav.container

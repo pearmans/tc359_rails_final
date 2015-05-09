@@ -10,7 +10,27 @@
 }
 
 input:focus, button:focus, textarea:focus {
-
   outline: 0;
+}
 
+form.form-default {
+  input {
+    padding: 8px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    margin: 5px 0;
+    &.btn {
+      border: 0;
+    }
+  }
+}
+
+table {
+  tbody {
+    border-top: 2px solid #ddd;
+  }
+  td, th {
+    padding: 6px 10px;
+  }
 }
