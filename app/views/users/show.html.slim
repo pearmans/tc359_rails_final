@@ -1,5 +1,5 @@
 - if @user.posts
   - @user.posts.each do |post|
     .post
-      h2 post.title
-      p post.body
+      h2 = post.title
+      blockquote = post.body.html_safe
