@@ -1,5 +1,7 @@
+h2.page-heading = @user.email
+
 - if @user.posts
   - @user.posts.each do |post|
-    .post
-      h2 = post.title
+    .post.col-md-6
+      h3 = post.title
       blockquote = post.body.html_safe

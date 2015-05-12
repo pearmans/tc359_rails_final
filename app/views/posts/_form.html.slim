@@ -6,27 +6,22 @@ javascript:
     })
   });
 
-= form_for current_user do |ff|
-  = ff.hidden_field :email
-  = ff.fields_for :post do |f|
-    - if @post.errors.any?
-      div#error_explanation
-        h2 = pluralize(@post.errors.count, "error") + "prohibited this post from being saved"
+= form_for @post do |f|
+  - if @post.errors.any?
+    div#error_explanation
+      h2 = pluralize(@post.errors.count, "error") + "prohibited this post from being saved"
 
-        ul
-          - @post.errors.full_messages.each do |message|
-            li = message
+      ul
+        - @post.errors.full_messages.each do |message|
+          li = message
 
-    .field
-      = f.label :title
-      = f.text_field :title, class: "title", placeholder: "Post Title..."
-      = f.label :body
-      = f.text_area :body, id: "edit"
-    .field
-      = f.label :category1
-      = f.text_field :category1
-    .field
-      = f.label :category2
-      = f.text_field :category2
-    .actions
-      = f.submit
+  .field
+    = f.label :title
+    = f.text_field :title, class: "title", placeholder: "Post Title..."
+    = f.label :body
+    = f.text_area :body, id: "edit"
+  .field
+    = f.label :category1, category_list
+    = collection_select(:post, :category_id, Category.all, :id, :title)
+  .actions
+    = f.submit

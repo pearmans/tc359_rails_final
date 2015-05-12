@@ -3,6 +3,7 @@ h1 Listing categories
 table
   thead
     tr
+      th ID
       th Title
       th Image
       th
@@ -12,6 +13,7 @@ table
   tbody
     - @categories.each do |category|
       tr
+        td = category.id
         td = category.title
         td = category.image
         td = link_to 'Show', category

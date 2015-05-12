@@ -1,12 +1,6 @@
-p#notice = notice
-
-p
-  strong Title:
-  = @category.title
-p
-  strong Image:
-  = @category.image
-
-= link_to 'Edit', edit_category_path(@category)
-'|
-= link_to 'Back', categories_path
+h2.page-heading = @category.title
+- if @category.posts
+  - @category.posts.each do |post|
+    .post.col-md-6
+      h3 = post.title
+      blockquote = post.body.html_safe
