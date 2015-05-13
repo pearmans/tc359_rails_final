@@ -23,6 +23,7 @@ gem 'pg'
 gem 'kaminari'
 gem 'bcrypt'
 gem 'font-awesome-rails'
+gem 'masonry-rails'
 # gem 'rmagick'
 # gem 'bcrypt', '~> 3.1.7' # Use ActiveModel has_secure_password
 # gem 'unicorn' # Use unicorn as the app server

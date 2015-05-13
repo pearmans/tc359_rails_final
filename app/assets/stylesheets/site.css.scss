@@ -124,6 +124,9 @@ div.toolbar {
     margin: 0 0 10px 0;
     font-size: 20px;
   }
+  img {
+    width: 100%;
+  }
 }
 
 .froala-view {
@@ -133,14 +136,21 @@ div.toolbar {
   }
 }
 
+#posts {
+  margin: 10px auto 0 auto;
+  text-align: center;
+}
+
 .home-post {
   background: #fff;
-  margin-bottom: 30px;
-  height: 240px;
+  margin: 10px;
   padding: 20px;
   border-radius: 10px;
+  border: $brand-border;
+  width: 350px;
+  overflow: hidden;
   &:hover {
-    background: #e6f6ff;
+    border-color: $brand-prim; 
   }
 }
 
@@ -168,8 +178,11 @@ blockquote {
   border: $brand-border;
   display: inline-block;
   background: $brand-prim-light;
-  max-width: 200px;
+  max-width: 250px;
   text-align: center;
+  h3 {
+    margin-bottom: 20px;
+  }
 }
 
 

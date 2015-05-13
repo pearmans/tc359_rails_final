@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :edit, :update, :destroy]
   helper_method :sort_direction, :sort_column
 
   # GET /posts
